@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/songjian/project/MambaCD')
+sys.path.insert(0, '/root/ChangeMamba')
 
 import argparse
 import os
@@ -7,7 +7,7 @@ import time
 
 import numpy as np
 
-from MambaCD.changedetection.configs.config import get_config
+from changedetection.configs.config import get_config
 
 import torch
 import torch.nn.functional as F
@@ -15,11 +15,11 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-from MambaCD.changedetection.datasets.make_data_loader import make_data_loader, MultimodalDamageAssessmentDatset
-from MambaCD.changedetection.utils_func.metrics import Evaluator
-from MambaCD.changedetection.models.ChangeMambaMMBDA import ChangeMambaMMBDA
+from changedetection.datasets.make_data_loader import make_data_loader, MultimodalDamageAssessmentDatset
+from changedetection.utils_func.metrics import Evaluator
+from changedetection.models.ChangeMambaMMBDA import ChangeMambaMMBDA
 
-import MambaCD.changedetection.utils_func.lovasz_loss as L
+import changedetection.utils_func.lovasz_loss as L
 import torch.nn as nn
 
 class Trainer(object):
